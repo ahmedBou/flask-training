@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="container">
+
+    <h1>Thank you. here is the info you gave us:</h1>
+    <ul>
+        <li> Name: {{session['name']}}</li>
+        <li> Breed: {{session['breed']}}</li>
+        <li> neutered: {{session['neutered']}}</li>
+        <li> Mood: {{session['mood']}}</li>
+        <li> Food: {{session['food']}}</li>
+    
+    </ul>
+</div>
+{% endblock %}

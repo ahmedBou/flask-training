@@ -4,13 +4,26 @@
 {% block title %} Blog {% endblock %}
 
 {% block page_content %}
-<div class="page-header">
-    <h1>Hello , {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+
+<div class="container">
+
+    <form method="POST">
+        
+        {{ form.hidden_tag() }}
+        
+        {{ form.name.label }} {{ form.name }}
+        <br>
+        {{ form.breed.label }} {{ form.breed }}
+        <br>
+        {{ form.neutered.label }} {{ form.neutered }}
+        <br>
+        {{ form.mood.label }} {{ form.mood }}
+        <br>
+        {{ form.food_choice.label }} {{ form.food_choice }}
+        <br>
+
+        {{ form.submit()}}
+    </form>
 </div>
-<form method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.name.label }} {{ form.name() }}
-    {{ form.submit()}}
-</form>
 {{ wtf.quick_form(form) }}
 {% endblock %}
